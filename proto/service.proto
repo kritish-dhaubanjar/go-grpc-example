@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/kritish-dhaubanjar/go-grpc-example/proto";
+
+service Service {
+  rpc GetUser(GetUserRequest) returns (User) {};
+}
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
